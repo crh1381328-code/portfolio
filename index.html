@@ -1,0 +1,1958 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PORTFOLIO — Creator & Developer</title>
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<style>
+:root {
+  --bg: #0a0a0f;
+  --bg-elev: #12121a;
+  --bg-card: #16161f;
+  --border: #2a2a38;
+  --border-light: #3a3a4c;
+  --text: #e8e8f0;
+  --text-dim: #8892a0;
+  --text-mute: #5a5a6e;
+  --accent: #00e676;
+  --accent-dim: #00e67622;
+  --accent-glow: #00e67644;
+  --warm: #ff7043;
+  --warm-dim: #ff704322;
+  --mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', Consolas, monospace;
+  --sans: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --radius: 4px;
+  --nav-h: 56px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection { background: var(--accent); color: var(--bg); }
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--border-light); }
+a { color: inherit; text-decoration: none; }
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 48px 48px;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 30%, transparent 100%);
+}
+
+/* ===== 可编辑 ===== */
+[contenteditable="true"] {
+  outline: none;
+  border-radius: 3px;
+  transition: background 0.2s, box-shadow 0.2s;
+  cursor: text;
+}
+[contenteditable="true"]:hover {
+  background: var(--accent-dim);
+  box-shadow: 0 0 0 1px rgba(0, 230, 118, 0.3);
+}
+[contenteditable="true"]:focus {
+  background: var(--bg-elev);
+  box-shadow: 0 0 0 1px var(--accent);
+}
+.edit-hint {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--text-mute);
+  margin-left: 8px;
+  opacity: 0;
+  transition: opacity 0.2s;
+  vertical-align: middle;
+  letter-spacing: 0.5px;
+}
+.editable-wrap:hover .edit-hint { opacity: 1; }
+
+/* ===== 导航 ===== */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--nav-h);
+  background: rgba(10, 10, 15, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  z-index: 100;
+}
+.nav-brand {
+  font-family: var(--mono);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.nav-brand .dot {
+  width: 10px; height: 10px;
+  background: var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--accent-glow);
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+.nav-links {
+  display: flex;
+  gap: 4px;
+  list-style: none;
+}
+.nav-links a {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--text-dim);
+  padding: 6px 14px;
+  border-radius: var(--radius);
+  transition: all 0.2s;
+  letter-spacing: 0.5px;
+}
+.nav-links a:hover {
+  color: var(--accent);
+  background: var(--accent-dim);
+}
+.nav-links a .num {
+  color: var(--accent);
+  margin-right: 6px;
+  font-size: 11px;
+}
+
+/* ===== 通用 Section ===== */
+section {
+  position: relative;
+  z-index: 1;
+  padding: 100px 32px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.section-label {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--accent);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+  max-width: 200px;
+}
+.section-title {
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 900;
+  margin-bottom: 40px;
+  letter-spacing: -0.5px;
+}
+
+/* ===== Hero ===== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: var(--nav-h);
+}
+.hero-greeting {
+  font-family: var(--mono);
+  font-size: 14px;
+  color: var(--accent);
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+.hero-name {
+  font-size: clamp(40px, 7vw, 72px);
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 8px;
+  letter-spacing: -1px;
+}
+.hero-role {
+  font-size: clamp(24px, 4vw, 44px);
+  font-weight: 700;
+  color: var(--text-dim);
+  line-height: 1.2;
+  margin-bottom: 32px;
+}
+.hero-desc {
+  max-width: 560px;
+  color: var(--text-dim);
+  font-size: 16px;
+  margin-bottom: 40px;
+}
+.hero-cta {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.btn {
+  font-family: var(--mono);
+  font-size: 13px;
+  padding: 12px 28px;
+  border-radius: var(--radius);
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+  letter-spacing: 0.5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn:hover {
+  background: var(--accent-dim);
+  box-shadow: 0 0 20px var(--accent-glow);
+  transform: translateY(-2px);
+}
+.btn-solid {
+  background: var(--accent);
+  color: var(--bg);
+  font-weight: 700;
+}
+.btn-solid:hover {
+  background: #00ff88;
+  box-shadow: 0 0 24px var(--accent-glow);
+}
+
+.hero-terminal {
+  position: absolute;
+  right: 32px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 380px;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  opacity: 0.9;
+}
+.hero-terminal-bar {
+  background: var(--bg-card);
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.hero-terminal-bar span {
+  width: 12px; height: 12px;
+  border-radius: 50%;
+}
+.hero-terminal-bar span:nth-child(1) { background: #ff5f57; }
+.hero-terminal-bar span:nth-child(2) { background: #febc2e; }
+.hero-terminal-bar span:nth-child(3) { background: #28c840; }
+.hero-terminal-bar .title {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text-mute);
+  margin-left: 8px;
+}
+.hero-terminal-body {
+  padding: 16px;
+  font-family: var(--mono);
+  font-size: 12px;
+  line-height: 1.8;
+  color: var(--text-dim);
+}
+.hero-terminal-body .line { white-space: pre; }
+.hero-terminal-body .prompt { color: var(--accent); }
+.hero-terminal-body .cmd { color: var(--text); }
+.hero-terminal-body .out { color: var(--text-mute); }
+
+/* ===== 关于 ===== */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+.about-text p {
+  color: var(--text-dim);
+  margin-bottom: 16px;
+}
+.about-text strong { color: var(--text); font-weight: 700; }
+.about-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.about-stats-full {
+  grid-template-columns: repeat(4, 1fr);
+}
+.stat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  transition: all 0.3s;
+}
+.stat-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+}
+.stat-num {
+  font-family: var(--mono);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+.stat-label {
+  font-size: 12px;
+  color: var(--text-mute);
+  letter-spacing: 0.5px;
+}
+
+/* ===== 作品 ===== */
+.works-add {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 32px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.works-add-input {
+  flex: 1;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px 16px;
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--text);
+  outline: none;
+  transition: all 0.2s;
+}
+.works-add-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-dim);
+}
+.works-add-input::placeholder { color: var(--text-mute); }
+.works-add-btn {
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 12px 24px;
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+  letter-spacing: 0.5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.works-add-btn:hover {
+  background: #00ff88;
+  box-shadow: 0 0 16px var(--accent-glow);
+}
+.works-add-btn:disabled {
+  background: var(--border);
+  color: var(--text-mute);
+  cursor: not-allowed;
+  box-shadow: none;
+}
+.works-add-hint {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text-mute);
+  margin-top: 10px;
+  margin-bottom: 24px;
+}
+.works-add-hint code {
+  color: var(--warm);
+  background: var(--warm-dim);
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+/* 分类管理栏 */
+.category-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+.category-list {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  flex: 1;
+}
+.category-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--text-dim);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.category-tag:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
+.category-tag.active {
+  background: var(--accent-dim);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.category-tag .cat-count {
+  font-size: 10px;
+  opacity: 0.6;
+}
+.category-add-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: transparent;
+  border: 1px dashed var(--border);
+  border-radius: 100px;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--text-mute);
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.category-add-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* 分类分组 */
+.work-group {
+  margin-bottom: 48px;
+}
+.work-group-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.work-group-title {
+  font-family: var(--mono);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: text;
+  outline: none;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.work-group-title:hover {
+  background: var(--accent-dim);
+  box-shadow: 0 0 0 1px rgba(0, 230, 118, 0.3);
+}
+.work-group-title:focus {
+  background: var(--bg-elev);
+  box-shadow: 0 0 0 1px var(--accent);
+}
+.work-group-count {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--text-mute);
+}
+.work-group-del {
+  width: 26px;
+  height: 26px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--text-mute);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.2s;
+  margin-left: auto;
+}
+.work-group:hover .work-group-del { opacity: 1; }
+.work-group-del:hover {
+  background: var(--warm);
+  border-color: var(--warm);
+  color: #fff;
+}
+
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+.work-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: all 0.3s;
+  position: relative;
+  animation: cardIn 0.4s ease;
+}
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.work-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 230, 118, 0.1);
+}
+.work-cover {
+  position: relative;
+  aspect-ratio: 16/9;
+  background: var(--bg-elev);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.work-cover::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235a5a6e' stroke-width='1.5'%3E%3Crect x='2' y='3' width='20' height='14' rx='2' ry='2'/%3E%3Cline x1='8' y1='21' x2='16' y2='21'/%3E%3Cline x1='12' y1='17' x2='12' y2='21'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: 0.4;
+}
+.work-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s;
+  position: relative;
+  z-index: 1;
+}
+.work-card a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  z-index: 1;
+}
+.work-card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  z-index: 1;
+  cursor: default;
+}
+.work-card:hover .work-cover img { transform: scale(1.05); }
+.work-cover-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent 50%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 12px;
+  z-index: 2;
+}
+.work-cover-stats { display: flex; gap: 12px; }
+.work-cover-stat {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+.work-cover-stat svg { opacity: 0.9; }
+.work-duration {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: #fff;
+  background: rgba(0,0,0,0.6);
+  padding: 2px 8px;
+  border-radius: 3px;
+}
+.work-actions {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  gap: 6px;
+  z-index: 3;
+  pointer-events: none;
+}
+.work-action-btn {
+  width: 32px;
+  height: 32px;
+  background: rgba(0,0,0,0.65);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.75;
+  transition: all 0.2s;
+  pointer-events: auto;
+}
+.work-card:hover .work-action-btn { opacity: 1; }
+.work-action-btn:hover { transform: scale(1.1); opacity: 1 !important; }
+.work-edit-btn:hover { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+.work-delete-btn:hover { background: var(--warm); border-color: var(--warm); }
+.work-body {
+  padding: 16px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  min-height: 148px;
+}
+.work-title {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  line-height: 1.4;
+  min-height: 42px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.work-author {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--text-dim);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.work-author svg { flex-shrink: 0; }
+.work-stats {
+  display: flex;
+  gap: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  margin-top: auto;
+}
+.work-stat {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--text-dim);
+}
+.work-stat svg { flex-shrink: 0; }
+.work-stat.like { color: var(--warm); }
+.work-stat.view { color: var(--accent); }
+
+.works-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-mute);
+}
+.works-empty svg { margin-bottom: 16px; opacity: 0.4; }
+.works-empty p { font-size: 14px; }
+.works-empty .sub { font-size: 12px; color: var(--text-mute); margin-top: 6px; }
+
+.works-manual-btn {
+  background: var(--bg-card);
+  color: var(--text-dim);
+  border: 1px solid var(--border);
+  padding: 12px 14px;
+}
+.works-manual-btn:hover {
+  background: var(--bg-elev);
+  color: var(--accent);
+  border-color: var(--accent);
+  box-shadow: none;
+}
+
+.works-manual-form {
+  display: none;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin-bottom: 32px;
+  animation: fadeIn 0.3s ease;
+}
+.works-manual-form.show { display: block; }
+.manual-form-title {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--accent);
+  margin-bottom: 18px;
+  letter-spacing: 1px;
+}
+.manual-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+.manual-field { display: flex; flex-direction: column; gap: 6px; }
+.manual-field label {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text-mute);
+  letter-spacing: 0.5px;
+}
+.manual-field input {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 10px 14px;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--text);
+  outline: none;
+  transition: all 0.2s;
+}
+.manual-field input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-dim);
+}
+.manual-field input::placeholder { color: var(--text-mute); }
+.manual-select {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 10px 14px;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--text);
+  outline: none;
+  transition: all 0.2s;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238892a0' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 32px;
+}
+.manual-select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-dim);
+}
+.manual-select option {
+  background: var(--bg-elev);
+  color: var(--text);
+}
+
+/* 封面上传 */
+.manual-field-cover { grid-column: 1 / -1; }
+.cover-upload-area {
+  position: relative;
+  border: 2px dashed var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: var(--bg);
+  min-height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cover-upload-area:hover,
+.cover-upload-area.dragover {
+  border-color: var(--accent);
+  background: var(--accent-dim);
+}
+.cover-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-mute);
+  font-size: 13px;
+}
+.cover-preview svg { opacity: 0.5; }
+.cover-hint {
+  font-size: 11px;
+  color: var(--text-mute);
+  opacity: 0.7;
+}
+.cover-preview-img {
+  max-width: 100%;
+  max-height: 200px;
+  border-radius: var(--radius);
+  object-fit: contain;
+  display: block;
+}
+.cover-remove-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 28px;
+  height: 28px;
+  background: rgba(0,0,0,0.7);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition: all 0.2s;
+}
+.cover-remove-btn:hover {
+  background: var(--warm);
+  border-color: var(--warm);
+}
+.cover-url-input {
+  margin-top: 10px;
+}
+.manual-form-actions { display: flex; gap: 12px; }
+.works-cancel-btn {
+  background: var(--bg-card);
+  color: var(--text-dim);
+  border: 1px solid var(--border);
+}
+.works-cancel-btn:hover {
+  background: var(--bg-elev);
+  color: var(--text);
+  box-shadow: none;
+}
+.manual-form-tip {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text-mute);
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+
+/* ===== 技能 ===== */
+.skills-wrap {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 32px;
+}
+.skill-group h4 {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--accent);
+  margin-bottom: 16px;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.skill-group h4::before {
+  content: '>';
+  color: var(--text-mute);
+}
+.skill-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.skill-list li {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--text-dim);
+  padding: 8px 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.2s;
+}
+.skill-list li:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
+.skill-list li .level {
+  font-size: 10px;
+  color: var(--text-mute);
+}
+
+/* ===== 页脚 / 联系 ===== */
+.footer {
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid var(--border);
+  padding: 60px 32px 40px;
+  text-align: center;
+}
+.footer .section-label { justify-content: center; }
+.footer-heading {
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 900;
+  margin-bottom: 12px;
+}
+.footer-sub {
+  font-size: 14px;
+  color: var(--text-dim);
+  margin-bottom: 32px;
+}
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+.footer-links a {
+  color: var(--text-dim);
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  padding: 8px 20px;
+  border: 1px solid var(--border);
+  border-radius: 100px;
+}
+.footer-links a:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+.footer-copy {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--text-mute);
+  margin-top: 16px;
+}
+
+/* ===== 滚动渐入 ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== 响应式 ===== */
+@media (max-width: 900px) {
+  .hero-terminal { display: none; }
+  .about-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .nav { padding: 0 16px; }
+  .nav-links { display: none; }
+  section { padding: 60px 16px; }
+  .works-add { flex-direction: column; align-items: stretch; }
+  .works-add-btn { width: 100%; justify-content: center; }
+  .manual-form-grid { grid-template-columns: 1fr; }
+  .manual-form-actions { flex-direction: column; }
+  .manual-form-actions button { width: 100%; justify-content: center; }
+  .hero-cta { flex-direction: column; }
+  .btn { justify-content: center; }
+  .about-stats { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-brand">
+    <span class="dot"></span>
+    <span>PORTFOLIO</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#works"><span class="num">01.</span>作品</a></li>
+    <li><a href="#about"><span class="num">02.</span>关于</a></li>
+    <li><a href="#skills"><span class="num">03.</span>技能</a></li>
+    <li><a href="#contact"><span class="num">04.</span>联系</a></li>
+  </ul>
+</nav>
+
+<!-- ===== Hero ===== -->
+<section class="hero">
+  <div class="hero-greeting editable-wrap">
+    <span contenteditable="true" data-key="hero_greeting">你好，我是</span>
+    <span class="edit-hint">点击编辑</span>
+  </div>
+  <h1 class="hero-name editable-wrap">
+    <span contenteditable="true" data-key="hero_name">崔瑞昊</span>
+    <span class="edit-hint">点击编辑</span>
+  </h1>
+  <div class="hero-role editable-wrap">
+    <span contenteditable="true" data-key="hero_role">视频剪辑师 / 后期制作</span>
+    <span class="edit-hint">点击编辑</span>
+  </div>
+  <p class="hero-desc editable-wrap">
+    <span contenteditable="true" data-key="hero_desc">数字媒体艺术专业，B站「大橙橙子」账号后期剪辑，累计 5000 万+ 播放量。擅长游戏综艺长视频、商业合作及发布会现场制作，从素材整理到成片输出全流程独立完成。</span>
+    <span class="edit-hint">点击编辑</span>
+  </p>
+  <div class="hero-cta">
+    <a href="#works" class="btn btn-solid">查看作品</a>
+  </div>
+
+  <div class="hero-terminal">
+    <div class="hero-terminal-bar">
+      <span></span><span></span><span></span>
+      <span class="title">~/whoami</span>
+    </div>
+    <div class="hero-terminal-body">
+      <div class="line"><span class="prompt">$</span> <span class="cmd">cat profile.json</span></div>
+      <div class="line out">{</div>
+      <div class="line out">  "name": "崔瑞昊",</div>
+      <div class="line out">  "role": "Video Editor",</div>
+      <div class="line out">  "views": "5000万+",</div>
+      <div class="line out">  "hot_rank": 34,</div>
+      <div class="line out">  "status": "Editing..."</div>
+      <div class="line out">}</div>
+      <div class="line"><span class="prompt">$</span> <span class="cmd">_</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 作品 ===== -->
+<section id="works" class="reveal">
+  <div class="section-label">01 / Works</div>
+  <h2 class="section-title">精选作品</h2>
+
+  <div class="works-add">
+    <input type="text" class="works-add-input" id="workAddInput" placeholder="粘贴 B 站视频链接，自动识别封面 / 标题 / 播放量 / 点赞量" autocomplete="off">
+    <button class="works-add-btn" id="workAddBtn">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      <span id="workAddBtnText">添加作品</span>
+    </button>
+    <button class="works-add-btn works-manual-btn" id="workManualBtn" title="手动填写">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+    </button>
+  </div>
+  <div class="works-add-hint">
+    支持粘贴 B 站链接自动识别，或点右侧按钮<strong>手动添加</strong>（可上传 GIF / PNG / JPG 封面，支持纯图片作品），数据保存在本地浏览器
+  </div>
+
+  <!-- 分类管理栏 -->
+  <div class="category-bar" id="categoryBar">
+    <div class="category-list" id="categoryList"></div>
+    <button class="category-add-btn" id="categoryAddBtn" title="添加分类">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      <span>新分类</span>
+    </button>
+  </div>
+
+  <div class="works-manual-form" id="workManualForm">
+    <div class="manual-form-title">手动添加作品</div>
+    <div class="manual-form-grid">
+      <div class="manual-field">
+        <label>作品标题 *</label>
+        <input type="text" id="manualTitle" placeholder="作品标题">
+      </div>
+      <div class="manual-field">
+        <label>分类</label>
+        <select id="manualCategory" class="manual-select">
+        </select>
+      </div>
+      <div class="manual-field">
+        <label>UP 主 / 来源</label>
+        <input type="text" id="manualAuthor" placeholder="UP主名称或来源">
+      </div>
+      <div class="manual-field">
+        <label>视频链接（可选，纯图片作品可不填）</label>
+        <input type="text" id="manualBvid" placeholder="https://www.bilibili.com/video/BV1xx411c7mD">
+      </div>
+      <div class="manual-field manual-field-cover">
+        <label>封面图（支持 GIF / PNG / JPG）</label>
+        <div class="cover-upload-area" id="coverUploadArea">
+          <input type="file" id="coverFileInput" accept="image/gif,image/png,image/jpeg,image/webp" hidden>
+          <div class="cover-preview" id="coverPreview">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            <span>点击上传或拖拽图片到此处</span>
+            <span class="cover-hint">支持 GIF 动图，单张不超过 5MB</span>
+          </div>
+          <img id="coverPreviewImg" class="cover-preview-img" alt="封面预览" style="display:none;">
+          <button type="button" class="cover-remove-btn" id="coverRemoveBtn" style="display:none;">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+        </div>
+        <input type="text" id="manualPic" placeholder="或粘贴图片 URL（可选）" class="cover-url-input">
+      </div>
+      <div class="manual-field">
+        <label>播放量</label>
+        <input type="text" id="manualView" placeholder="例如 10万 或 100000">
+      </div>
+      <div class="manual-field">
+        <label>点赞量</label>
+        <input type="text" id="manualLike" placeholder="例如 5000 或 0.5万">
+      </div>
+    </div>
+    <div class="manual-form-actions">
+      <button class="works-add-btn" id="manualSubmitBtn">确认添加</button>
+      <button class="works-add-btn works-cancel-btn" id="manualCancelBtn">取消</button>
+    </div>
+    <div class="manual-form-tip">提示：封面图可点击上传区域选择本地图片（支持 GIF 动图），也可在下方粘贴图片 URL；不填 B 站链接可添加纯图片作品</div>
+  </div>
+
+  <div class="works-groups" id="worksGroups"></div>
+</section>
+
+<!-- ===== 关于 ===== -->
+<section id="about" class="reveal">
+  <div class="section-label">02 / About</div>
+  <h2 class="section-title editable-wrap">
+    <span contenteditable="true" data-key="about_title">关于我</span>
+    <span class="edit-hint">点击编辑</span>
+  </h2>
+  <div class="about-stats about-stats-full">
+    <div class="stat-card">
+      <div class="stat-num editable-wrap">
+        <span contenteditable="true" data-key="stat1_num">5000万+</span>
+        <span class="edit-hint">编辑</span>
+      </div>
+      <div class="stat-label editable-wrap">
+        <span contenteditable="true" data-key="stat1_label">累计播放量</span>
+        <span class="edit-hint">编辑</span>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num editable-wrap">
+        <span contenteditable="true" data-key="stat2_num">20+</span>
+        <span class="edit-hint">编辑</span>
+      </div>
+      <div class="stat-label editable-wrap">
+        <span contenteditable="true" data-key="stat2_label">长视频作品</span>
+        <span class="edit-hint">编辑</span>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num editable-wrap">
+        <span contenteditable="true" data-key="stat3_num">TOP34</span>
+        <span class="edit-hint">编辑</span>
+      </div>
+      <div class="stat-label editable-wrap">
+        <span contenteditable="true" data-key="stat3_label">B站热门榜</span>
+        <span class="edit-hint">编辑</span>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num editable-wrap">
+        <span contenteditable="true" data-key="stat4_num">前5%</span>
+        <span class="edit-hint">编辑</span>
+      </div>
+      <div class="stat-label editable-wrap">
+        <span contenteditable="true" data-key="stat4_label">专业排名</span>
+        <span class="edit-hint">编辑</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 技能 ===== -->
+<section id="skills" class="reveal">
+  <div class="section-label">03 / Skills</div>
+  <h2 class="section-title editable-wrap">
+    <span contenteditable="true" data-key="skills_title">技术栈</span>
+    <span class="edit-hint">点击编辑</span>
+  </h2>
+  <div class="skills-wrap">
+    <div class="skill-group">
+      <h4 class="editable-wrap">
+        <span contenteditable="true" data-key="skill_group1">视频创作</span>
+        <span class="edit-hint">编辑</span>
+      </h4>
+      <ul class="skill-list">
+        <li><span contenteditable="true" data-key="skill1_1">Premiere Pro</span> <span class="level" contenteditable="true" data-key="skill1_1_lvl">熟练</span></li>
+        <li><span contenteditable="true" data-key="skill1_2">DaVinci Resolve</span> <span class="level" contenteditable="true" data-key="skill1_2_lvl">熟练</span></li>
+        <li><span contenteditable="true" data-key="skill1_3">After Effects</span> <span class="level" contenteditable="true" data-key="skill1_3_lvl">进阶</span></li>
+        <li><span contenteditable="true" data-key="skill1_4">Audition</span> <span class="level" contenteditable="true" data-key="skill1_4_lvl">熟练</span></li>
+      </ul>
+    </div>
+    <div class="skill-group">
+      <h4 class="editable-wrap">
+        <span contenteditable="true" data-key="skill_group2">三维 & 设计</span>
+        <span class="edit-hint">编辑</span>
+      </h4>
+      <ul class="skill-list">
+        <li><span contenteditable="true" data-key="skill2_1">Blender</span> <span class="level" contenteditable="true" data-key="skill2_1_lvl">进阶</span></li>
+        <li><span contenteditable="true" data-key="skill2_2">Photoshop</span> <span class="level" contenteditable="true" data-key="skill2_2_lvl">熟练</span></li>
+        <li><span contenteditable="true" data-key="skill2_3">AI 建模工具链</span> <span class="level" contenteditable="true" data-key="skill2_3_lvl">进阶</span></li>
+        <li><span contenteditable="true" data-key="skill2_4">LUT 调色</span> <span class="level" contenteditable="true" data-key="skill2_4_lvl">熟练</span></li>
+      </ul>
+    </div>
+    <div class="skill-group">
+      <h4 class="editable-wrap">
+        <span contenteditable="true" data-key="skill_group3">前端开发</span>
+        <span class="edit-hint">编辑</span>
+      </h4>
+      <ul class="skill-list">
+        <li><span contenteditable="true" data-key="skill3_1">HTML5 / CSS3</span> <span class="level" contenteditable="true" data-key="skill3_1_lvl">熟练</span></li>
+        <li><span contenteditable="true" data-key="skill3_2">JavaScript (ES6+)</span> <span class="level" contenteditable="true" data-key="skill3_2_lvl">进阶</span></li>
+        <li><span contenteditable="true" data-key="skill3_3">GSAP 动画</span> <span class="level" contenteditable="true" data-key="skill3_3_lvl">进阶</span></li>
+        <li><span contenteditable="true" data-key="skill3_4">响应式布局</span> <span class="level" contenteditable="true" data-key="skill3_4_lvl">熟练</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 页脚 / 联系 ===== -->
+<footer class="footer" id="contact">
+  <div class="section-label">04 / Contact</div>
+  <h2 class="footer-heading editable-wrap">
+    <span contenteditable="true" data-key="contact_heading">一起做点什么</span>
+    <span class="edit-hint">点击编辑</span>
+  </h2>
+  <p class="footer-sub editable-wrap">
+    <span contenteditable="true" data-key="contact_sub">有合作想法或项目需求？随时联系我。</span>
+    <span class="edit-hint">点击编辑</span>
+  </p>
+  <div class="footer-links">
+    <a href="#" target="_blank" class="editable-wrap">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+      <span contenteditable="true" data-key="contact_bilibili">B站 @你的账号</span>
+      <span class="edit-hint">编辑</span>
+    </a>
+    <a href="#" target="_blank" class="editable-wrap">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+      <span contenteditable="true" data-key="contact_github">GitHub</span>
+      <span class="edit-hint">编辑</span>
+    </a>
+    <a href="mailto:hello@example.com" class="editable-wrap">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      <span contenteditable="true" data-key="contact_email">hello@example.com</span>
+      <span class="edit-hint">编辑</span>
+    </a>
+  </div>
+  <p class="footer-copy editable-wrap">
+    <span contenteditable="true" data-key="footer_copy">用代码与镜头构建 · 2026 All rights reserved</span>
+    <span class="edit-hint">编辑</span>
+  </p>
+</footer>
+
+<script>
+// ===== 可编辑内容：自动保存到 localStorage =====
+const EDIT_KEY = 'portfolio_editable_content';
+
+function loadEditable() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(EDIT_KEY) || '{}');
+    document.querySelectorAll('[contenteditable="true"]').forEach(el => {
+      const key = el.getAttribute('data-key');
+      if (saved[key] !== undefined && saved[key] !== null) {
+        el.innerHTML = saved[key];
+      }
+    });
+  } catch (e) {
+    console.warn('加载可编辑内容失败', e);
+  }
+}
+
+function saveEditable() {
+  const data = {};
+  document.querySelectorAll('[contenteditable="true"]').forEach(el => {
+    const key = el.getAttribute('data-key');
+    if (key) data[key] = el.innerHTML;
+  });
+  localStorage.setItem(EDIT_KEY, JSON.stringify(data));
+}
+
+loadEditable();
+
+document.querySelectorAll('[contenteditable="true"]').forEach(el => {
+  el.addEventListener('blur', saveEditable);
+  el.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      this.blur();
+    }
+  });
+});
+
+window.resetEditable = function() {
+  localStorage.removeItem(EDIT_KEY);
+  location.reload();
+};
+
+// ===== 滚动渐入 =====
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// ===== 通用工具函数 =====
+function extractBvid(input) {
+  const match = input.trim().match(/BV[0-9A-Za-z]{10}/);
+  return match ? match[0] : null;
+}
+
+function formatDuration(sec) {
+  const m = Math.floor(sec / 60);
+  const s = sec % 60;
+  return `${m}:${s.toString().padStart(2, '0')}`;
+}
+
+function formatViews(n) {
+  if (n >= 10000) return (n / 10000).toFixed(1) + ' 万';
+  return n.toLocaleString();
+}
+
+const BILI_PROXIES = [
+  { name: 'allorigins-raw', url: (u) => `https://api.allorigins.win/raw?url=${encodeURIComponent(u)}`, parse: 'raw' },
+  { name: 'allorigins-get', url: (u) => `https://api.allorigins.win/get?url=${encodeURIComponent(u)}`, parse: 'allorigins-get' },
+  { name: 'codetabs', url: (u) => `https://api.codetabs.com/v1/proxy/?quest=${encodeURIComponent(u)}`, parse: 'raw' },
+  { name: 'thingproxy', url: (u) => `https://thingproxy.freeboard.io/fetch/${u}`, parse: 'raw' },
+  { name: 'cors-eu-org', url: (u) => `https://cors.eu.org/${u}`, parse: 'raw' },
+];
+
+async function fetchWithTimeout(url, ms = 10000) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), ms);
+  try {
+    return await fetch(url, { signal: controller.signal });
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+async function fetchBilibiliVideo(bvid) {
+  const apiUrl = `https://api.bilibili.com/x/web-interface/view?bvid=${bvid}`;
+  let lastErr = null;
+  for (const proxy of BILI_PROXIES) {
+    try {
+      const proxyUrl = proxy.url(apiUrl);
+      const res = await fetchWithTimeout(proxyUrl, 10000);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      let json;
+      if (proxy.parse === 'allorigins-get') {
+        const wrapped = await res.json();
+        if (!wrapped.contents) throw new Error('代理返回空内容');
+        json = JSON.parse(wrapped.contents);
+      } else {
+        const text = await res.text();
+        json = JSON.parse(text);
+      }
+      if (json.code !== 0) throw new Error(json.message || '视频不存在或无法访问');
+      if (json.data.pic && json.data.pic.startsWith('http://')) {
+        json.data.pic = json.data.pic.replace('http://', 'https://');
+      }
+      return json.data;
+    } catch (err) {
+      lastErr = err;
+      continue;
+    }
+  }
+  throw new Error('所有代理均失败：' + (lastErr ? lastErr.message : '未知错误') + '。请稍后重试或检查网络。');
+}
+
+// ===== 作品管理 =====
+const WORDS_KEY = 'portfolio_works';
+const CAT_KEY = 'portfolio_categories';
+const worksGroups = document.getElementById('worksGroups');
+const categoryList = document.getElementById('categoryList');
+const workAddInput = document.getElementById('workAddInput');
+const workAddBtn = document.getElementById('workAddBtn');
+
+let activeCategoryId = 'all';
+
+const DEFAULT_CATEGORIES = [
+  { id: 'cat_1', name: '游戏视频' },
+  { id: 'cat_2', name: '商业合作' },
+  { id: 'cat_3', name: '其他作品' }
+];
+
+function loadCategories() {
+  try {
+    const cats = JSON.parse(localStorage.getItem(CAT_KEY));
+    if (cats && Array.isArray(cats) && cats.length > 0) return cats;
+  } catch {}
+  return JSON.parse(JSON.stringify(DEFAULT_CATEGORIES));
+}
+
+function saveCategories(cats) {
+  localStorage.setItem(CAT_KEY, JSON.stringify(cats));
+}
+
+function getCategoryName(catId) {
+  const cat = loadCategories().find(c => c.id === catId);
+  return cat ? cat.name : '未分类';
+}
+
+function renderCategoryTags() {
+  const cats = loadCategories();
+  const works = loadWorks();
+  const allCount = works.length;
+  let html = `<span class="category-tag ${activeCategoryId === 'all' ? 'active' : ''}" data-cat="all">全部 <span class="cat-count">${allCount}</span></span>`;
+  cats.forEach(cat => {
+    const count = works.filter(w => w.categoryId === cat.id).length;
+    html += `<span class="category-tag ${activeCategoryId === cat.id ? 'active' : ''}" data-cat="${cat.id}">${cat.name} <span class="cat-count">${count}</span></span>`;
+  });
+  categoryList.innerHTML = html;
+  categoryList.querySelectorAll('.category-tag').forEach(tag => {
+    tag.addEventListener('click', () => {
+      activeCategoryId = tag.dataset.cat;
+      renderCategoryTags();
+      renderWorks();
+    });
+  });
+}
+
+document.getElementById('categoryAddBtn').addEventListener('click', () => {
+  const cats = loadCategories();
+  const newId = 'cat_' + Date.now();
+  cats.push({ id: newId, name: '新分类' });
+  saveCategories(cats);
+  activeCategoryId = newId;
+  renderCategoryTags();
+  renderWorks();
+  setTimeout(() => {
+    const title = document.querySelector(`.work-group[data-cat="${newId}"] .work-group-title`);
+    if (title) {
+      title.focus();
+      document.execCommand('selectAll', false, null);
+    }
+  }, 50);
+});
+
+function renderWorkCard(w) {
+  const isLocal = w.bvid.startsWith('local_');
+  const cardLink = isLocal
+    ? `<div class="work-card-link">`
+    : `<a href="https://www.bilibili.com/video/${w.bvid}" target="_blank" rel="noopener" data-bili-link="1">`;
+  const cardLinkEnd = isLocal ? `</div>` : `</a>`;
+  const picSrc = w.pic && w.pic.startsWith('data:') ? w.pic : (w.pic ? w.pic.replace('http://', 'https://') : '');
+  return `
+    <div class="work-card" data-bvid="${w.bvid}">
+      <div class="work-actions">
+        <button class="work-action-btn work-edit-btn" title="编辑作品" data-bvid="${w.bvid}">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+        </button>
+        <button class="work-action-btn work-delete-btn" title="移除作品" data-bvid="${w.bvid}">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      ${cardLink}
+        <div class="work-cover">
+          ${picSrc ? `<img src="${picSrc}" alt="${w.title}" loading="lazy" ${w.pic.startsWith('data:') ? '' : 'referrerpolicy="no-referrer"'} onerror="this.style.display='none'">` : ''}
+          <div class="work-cover-overlay">
+            <div class="work-cover-stats">
+              <span class="work-cover-stat">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                ${formatViews(w.view)}
+              </span>
+            </div>
+            ${isLocal ? '' : `<span class="work-duration">${formatDuration(w.duration)}</span>`}
+          </div>
+        </div>
+        <div class="work-body">
+          <div class="work-title">${w.title}</div>
+          <div class="work-author">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            ${w.author}
+          </div>
+          <div class="work-stats">
+            <span class="work-stat view">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              ${formatViews(w.view)}
+            </span>
+            <span class="work-stat like">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>
+              ${formatViews(w.like)}
+            </span>
+            ${isLocal ? '' : `<span class="work-stat">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              ${formatViews(w.reply)}
+            </span>`}
+          </div>
+        </div>
+      ${cardLinkEnd}
+    </div>
+  `;
+}
+
+function bindWorkCardEvents(container) {
+  container.querySelectorAll('.work-delete-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      removeWork(btn.dataset.bvid);
+    });
+  });
+  container.querySelectorAll('.work-edit-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      editWork(btn.dataset.bvid);
+    });
+  });
+  container.querySelectorAll('a[data-bili-link]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      if (e.target.closest('.work-action-btn')) return;
+      e.preventDefault();
+      const url = link.getAttribute('href');
+      const win = window.open(url, '_blank');
+      if (!win) window.location.href = url;
+    });
+  });
+}
+
+function loadWorks() {
+  try {
+    return JSON.parse(localStorage.getItem(WORDS_KEY)) || [];
+  } catch { return []; }
+}
+
+function saveWorks(works) {
+  localStorage.setItem(WORDS_KEY, JSON.stringify(works));
+}
+
+function renderWorks() {
+  const works = loadWorks();
+  works.sort((a, b) => (b.view || 0) - (a.view || 0));
+  const cats = loadCategories();
+  if (works.length === 0) {
+    worksGroups.innerHTML = `
+      <div class="works-empty" style="grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--text-mute);">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="margin-bottom:16px;opacity:0.4;"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        <p style="font-size:14px;">还没有添加作品</p>
+        <p style="font-size:12px;color:var(--text-mute);margin-top:6px;">在上方粘贴 B 站视频链接，或点手动填写添加作品</p>
+      </div>`;
+    return;
+  }
+  let displayCats;
+  if (activeCategoryId === 'all') {
+    displayCats = cats;
+  } else {
+    displayCats = cats.filter(c => c.id === activeCategoryId);
+  }
+  let html = '';
+  displayCats.forEach(cat => {
+    const catWorks = works.filter(w => w.categoryId === cat.id);
+    if (catWorks.length === 0 && activeCategoryId !== 'all') return;
+    html += `
+      <div class="work-group" data-cat="${cat.id}">
+        <div class="work-group-header">
+          <span class="work-group-title" contenteditable="true" data-cat-id="${cat.id}">${cat.name}</span>
+          <span class="work-group-count">${catWorks.length} 个作品</span>
+          <button class="work-group-del" data-cat-id="${cat.id}" title="删除分类">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+        </div>
+        <div class="works-grid">
+          ${catWorks.length > 0 ? catWorks.map(w => renderWorkCard(w)).join('') : '<p style="grid-column:1/-1;color:var(--text-mute);font-size:13px;padding:20px 0;">该分类下暂无作品，添加作品时选择此分类即可</p>'}
+        </div>
+      </div>
+    `;
+  });
+  const validCatIds = cats.map(c => c.id);
+  const uncategorized = works.filter(w => !w.categoryId || !validCatIds.includes(w.categoryId));
+  if (uncategorized.length > 0 && activeCategoryId === 'all') {
+    html += `
+      <div class="work-group" data-cat="uncategorized">
+        <div class="work-group-header">
+          <span class="work-group-title" style="cursor:default;">未分类</span>
+          <span class="work-group-count">${uncategorized.length} 个作品</span>
+        </div>
+        <div class="works-grid">
+          ${uncategorized.map(w => renderWorkCard(w)).join('')}
+        </div>
+      </div>
+    `;
+  }
+  worksGroups.innerHTML = html;
+  bindWorkCardEvents(worksGroups);
+  worksGroups.querySelectorAll('.work-group-title[contenteditable]').forEach(title => {
+    title.addEventListener('blur', () => {
+      const catId = title.dataset.catId;
+      const newName = title.textContent.trim() || '未命名';
+      const cats = loadCategories();
+      const idx = cats.findIndex(c => c.id === catId);
+      if (idx !== -1) {
+        cats[idx].name = newName;
+        saveCategories(cats);
+        renderCategoryTags();
+      }
+    });
+    title.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        title.blur();
+      }
+    });
+  });
+  worksGroups.querySelectorAll('.work-group-del').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const catId = btn.dataset.catId;
+      const cats = loadCategories();
+      if (cats.length <= 1) {
+        alert('至少保留一个分类');
+        return;
+      }
+      const catName = getCategoryName(catId);
+      if (!confirm(`确定删除分类「${catName}」吗？该分类下的作品将移至「未分类」`)) return;
+      const newCats = cats.filter(c => c.id !== catId);
+      saveCategories(newCats);
+      if (activeCategoryId === catId) activeCategoryId = 'all';
+      renderCategoryTags();
+      renderWorks();
+    });
+  });
+}
+
+function addWork(bvid) {
+  const works = loadWorks();
+  if (works.some(w => w.bvid === bvid)) {
+    return { ok: false, msg: '该视频已在作品集中' };
+  }
+  return { ok: true };
+}
+
+function removeWork(bvid) {
+  let works = loadWorks();
+  works = works.filter(w => w.bvid !== bvid);
+  saveWorks(works);
+  renderCategoryTags();
+  renderWorks();
+}
+
+function getDefaultCategoryId() {
+  if (activeCategoryId !== 'all') return activeCategoryId;
+  const cats = loadCategories();
+  return cats.length > 0 ? cats[0].id : '';
+}
+
+async function handleAddWork() {
+  const input = workAddInput.value.trim();
+  if (!input) return;
+  const bvid = extractBvid(input);
+  if (!bvid) {
+    workAddInput.style.borderColor = 'var(--warm)';
+    workAddInput.placeholder = '无法识别 BV 号，请检查链接格式';
+    setTimeout(() => {
+      workAddInput.style.borderColor = '';
+      workAddInput.placeholder = '粘贴 B 站视频链接，自动识别封面 / 标题 / 播放量 / 点赞量';
+    }, 2500);
+    return;
+  }
+  const check = addWork(bvid);
+  if (!check.ok) {
+    workAddInput.value = '';
+    workAddInput.placeholder = check.msg;
+    setTimeout(() => {
+      workAddInput.placeholder = '粘贴 B 站视频链接，自动识别封面 / 标题 / 播放量 / 点赞量';
+    }, 2000);
+    return;
+  }
+  workAddBtn.disabled = true;
+  document.getElementById('workAddBtnText').textContent = '识别中...';
+  try {
+    const data = await fetchBilibiliVideo(bvid);
+    const works = loadWorks();
+    works.unshift({
+      bvid: data.bvid, title: data.title, author: data.owner.name,
+      pic: data.pic, duration: data.duration, view: data.stat.view,
+      like: data.stat.like, reply: data.stat.reply,
+      categoryId: getDefaultCategoryId(),
+      addedAt: Date.now()
+    });
+    saveWorks(works);
+    renderCategoryTags();
+    renderWorks();
+    workAddInput.value = '';
+  } catch (err) {
+    workAddInput.style.borderColor = 'var(--warm)';
+    workAddInput.value = '';
+    workAddInput.placeholder = '自动识别失败，可点右侧按钮手动添加';
+    setTimeout(() => {
+      workAddInput.style.borderColor = '';
+      workAddInput.placeholder = '粘贴 B 站视频链接，自动识别封面 / 标题 / 播放量 / 点赞量';
+    }, 4000);
+  } finally {
+    workAddBtn.disabled = false;
+    document.getElementById('workAddBtnText').textContent = '添加作品';
+  }
+}
+
+workAddBtn.addEventListener('click', handleAddWork);
+workAddInput.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') handleAddWork();
+});
+
+const workManualBtn = document.getElementById('workManualBtn');
+const workManualForm = document.getElementById('workManualForm');
+const manualCancelBtn = document.getElementById('manualCancelBtn');
+const manualSubmitBtn = document.getElementById('manualSubmitBtn');
+let editingBvid = null;
+let uploadedCoverData = '';
+
+const coverFileInput = document.getElementById('coverFileInput');
+const coverUploadArea = document.getElementById('coverUploadArea');
+const coverPreview = document.getElementById('coverPreview');
+const coverPreviewImg = document.getElementById('coverPreviewImg');
+const coverRemoveBtn = document.getElementById('coverRemoveBtn');
+const MAX_IMG_SIZE = 5 * 1024 * 1024;
+
+function showCoverPreview(dataUrl) {
+  uploadedCoverData = dataUrl;
+  coverPreview.style.display = 'none';
+  coverPreviewImg.src = dataUrl;
+  coverPreviewImg.style.display = 'block';
+  coverRemoveBtn.style.display = 'flex';
+}
+
+function resetCoverPreview() {
+  uploadedCoverData = '';
+  coverPreview.style.display = 'flex';
+  coverPreviewImg.src = '';
+  coverPreviewImg.style.display = 'none';
+  coverRemoveBtn.style.display = 'none';
+}
+
+function handleCoverFile(file) {
+  if (!file) return;
+  if (!file.type.startsWith('image/')) {
+    alert('请选择图片文件（GIF / PNG / JPG / WebP）');
+    return;
+  }
+  if (file.size > MAX_IMG_SIZE) {
+    alert('图片大小不能超过 5MB，当前 ' + (file.size / 1024 / 1024).toFixed(1) + 'MB');
+    return;
+  }
+  const reader = new FileReader();
+  reader.onload = (e) => showCoverPreview(e.target.result);
+  reader.onerror = () => alert('图片读取失败，请重试');
+  reader.readAsDataURL(file);
+}
+
+coverUploadArea.addEventListener('click', () => coverFileInput.click());
+coverFileInput.addEventListener('change', (e) => handleCoverFile(e.target.files[0]));
+coverUploadArea.addEventListener('dragover', (e) => {
+  e.preventDefault();
+  coverUploadArea.classList.add('dragover');
+});
+coverUploadArea.addEventListener('dragleave', () => {
+  coverUploadArea.classList.remove('dragover');
+});
+coverUploadArea.addEventListener('drop', (e) => {
+  e.preventDefault();
+  coverUploadArea.classList.remove('dragover');
+  handleCoverFile(e.dataTransfer.files[0]);
+});
+coverRemoveBtn.addEventListener('click', (e) => {
+  e.stopPropagation();
+  resetCoverPreview();
+});
+
+function renderCategorySelect(selectedId) {
+  const cats = loadCategories();
+  const select = document.getElementById('manualCategory');
+  select.innerHTML = cats.map(c =>
+    `<option value="${c.id}" ${c.id === selectedId ? 'selected' : ''}>${c.name}</option>`
+  ).join('');
+}
+
+function parseWan(str) {
+  str = str.trim();
+  if (!str) return 0;
+  if (str.includes('万')) {
+    const num = parseFloat(str.replace('万', ''));
+    return isNaN(num) ? 0 : Math.round(num * 10000);
+  }
+  return parseInt(str) || 0;
+}
+
+function toWanInput(n) {
+  if (!n) return '';
+  if (n >= 10000) {
+    const w = n / 10000;
+    return (Number.isInteger(w) ? w : w.toFixed(1)) + '万';
+  }
+  return String(n);
+}
+
+function getFinalPic() {
+  if (uploadedCoverData) return uploadedCoverData;
+  return document.getElementById('manualPic').value.trim() || '';
+}
+
+function fillManualForm(work) {
+  document.getElementById('manualTitle').value = work.title || '';
+  document.getElementById('manualAuthor').value = work.author || '';
+  document.getElementById('manualBvid').value = work.bvid && !work.bvid.startsWith('local_')
+    ? `https://www.bilibili.com/video/${work.bvid}`
+    : '';
+  document.getElementById('manualPic').value = '';
+  document.getElementById('manualView').value = toWanInput(work.view);
+  document.getElementById('manualLike').value = toWanInput(work.like);
+  renderCategorySelect(work.categoryId || getDefaultCategoryId());
+  if (work.pic) {
+    if (work.pic.startsWith('data:')) {
+      showCoverPreview(work.pic);
+    } else {
+      resetCoverPreview();
+      document.getElementById('manualPic').value = work.pic;
+    }
+  } else {
+    resetCoverPreview();
+  }
+}
+
+function clearManualForm() {
+  ['manualTitle','manualAuthor','manualBvid','manualPic','manualView','manualLike'].forEach(id => {
+    document.getElementById(id).value = '';
+  });
+  resetCoverPreview();
+  renderCategorySelect(getDefaultCategoryId());
+}
+
+function setEditMode(bvid) {
+  editingBvid = bvid;
+  manualSubmitBtn.textContent = '保存修改';
+  document.querySelector('.manual-form-title').textContent = '编辑作品';
+}
+
+function setAddMode() {
+  editingBvid = null;
+  manualSubmitBtn.textContent = '确认添加';
+  document.querySelector('.manual-form-title').textContent = '手动添加作品';
+}
+
+function editWork(bvid) {
+  const works = loadWorks();
+  const work = works.find(w => w.bvid === bvid);
+  if (!work) return;
+  fillManualForm(work);
+  setEditMode(bvid);
+  workManualForm.classList.add('show');
+  workManualForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+workManualBtn.addEventListener('click', () => {
+  if (workManualForm.classList.contains('show')) {
+    workManualForm.classList.remove('show');
+    setAddMode();
+    clearManualForm();
+  } else {
+    setAddMode();
+    clearManualForm();
+    workManualForm.classList.add('show');
+  }
+});
+
+manualCancelBtn.addEventListener('click', () => {
+  workManualForm.classList.remove('show');
+  setAddMode();
+  clearManualForm();
+});
+
+manualSubmitBtn.addEventListener('click', () => {
+  const title = document.getElementById('manualTitle').value.trim();
+  const linkInput = document.getElementById('manualBvid').value.trim();
+  const bvid = extractBvid(linkInput);
+  const pic = getFinalPic();
+  const categoryId = document.getElementById('manualCategory').value;
+  if (!title) {
+    alert('请填写作品标题');
+    return;
+  }
+  const finalBvid = bvid || ('local_' + Date.now());
+  const works = loadWorks();
+  if (editingBvid) {
+    const idx = works.findIndex(w => w.bvid === editingBvid);
+    if (idx === -1) { alert('未找到要编辑的作品'); return; }
+    if (bvid && bvid !== editingBvid && works.some(w => w.bvid === bvid)) {
+      alert('该视频已在作品集中'); return;
+    }
+    works[idx] = {
+      ...works[idx],
+      bvid: finalBvid, title, categoryId,
+      author: document.getElementById('manualAuthor').value.trim() || '未知来源',
+      pic,
+      view: parseWan(document.getElementById('manualView').value),
+      like: parseWan(document.getElementById('manualLike').value),
+    };
+  } else {
+    if (bvid && works.some(w => w.bvid === bvid)) {
+      alert('该视频已在作品集中'); return;
+    }
+    works.unshift({
+      bvid: finalBvid, title, categoryId,
+      author: document.getElementById('manualAuthor').value.trim() || '未知来源',
+      pic,
+      duration: 0,
+      view: parseWan(document.getElementById('manualView').value),
+      like: parseWan(document.getElementById('manualLike').value),
+      reply: 0, addedAt: Date.now()
+    });
+  }
+  saveWorks(works);
+  renderCategoryTags();
+  renderWorks();
+  clearManualForm();
+  setAddMode();
+  workManualForm.classList.remove('show');
+});
+
+renderCategoryTags();
+renderWorks();
+</script>
+
+</body>
+</html>
