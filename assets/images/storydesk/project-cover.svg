@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="420" viewBox="0 0 600 420" fill="none">
+  <title>分镜工坊 · 先有拍法，再有分镜</title>
+  <desc>以镜头画面、分镜表与导出页组成的项目概念封面。</desc>
+  <rect width="600" height="420" fill="#151619"/>
+  <g font-family="Microsoft YaHei, PingFang SC, sans-serif">
+    <rect x="35" y="39" width="27" height="27" rx="5" stroke="#e0e1e6" stroke-width="1.5"/>
+    <path d="M40 45h7v7h-7zm12 0h5v7h-5zM40 57h17" stroke="#b6bac5" stroke-width="1.5"/>
+    <text x="79" y="59" fill="#e0e1e6" font-size="18" letter-spacing="3">STORYDESK</text>
+    <text x="563" y="57" text-anchor="end" fill="#a6a8b2" font-size="11" letter-spacing="2">PLAN EVERY SHOT</text>
+    <rect x="47" y="106" width="506" height="198" rx="12" fill="#202125" stroke="#50535d"/>
+    <path d="M47 138h506" stroke="#41444c"/>
+    <circle cx="66" cy="123" r="3" fill="#9598a2"/>
+    <path d="M80 123h64" stroke="#9598a2" stroke-width="2" stroke-linecap="round"/>
+    <g stroke="#5d616c">
+      <rect x="65" y="155" width="144" height="82" rx="5" fill="#151619"/>
+      <rect x="228" y="155" width="144" height="82" rx="5" fill="#151619"/>
+      <rect x="391" y="155" width="144" height="82" rx="5" fill="#151619"/>
+    </g>
+    <g fill="#a6a8b2">
+      <circle cx="137" cy="183" r="10"/>
+      <path d="M119 224v-16c0-23 36-23 36 0v16z"/>
+      <circle cx="300" cy="188" r="15" fill="#c4c5cc"/>
+      <path d="M276 236v-9c0-32 48-32 48 0v9z" fill="#c4c5cc"/>
+      <circle cx="444" cy="186" r="9"/><circle cx="486" cy="186" r="9"/>
+      <path d="M430 223v-13c0-19 28-19 28 0v13zm42 0v-13c0-19 28-19 28 0v13z"/>
+    </g>
+    <path d="M76 222h31m58 0h31m206 0h20m84 0h18" stroke="#454850"/>
+    <g fill="#c4c5cc" font-size="11" letter-spacing="1">
+      <text x="66" y="257">01 / 全景</text><text x="229" y="257">02 / 特写</text><text x="392" y="257">03 / 双人镜头</text>
+    </g>
+    <path d="M66 278h110m53 0h83m80 0h110" stroke="#747986" stroke-width="2" stroke-linecap="round"/>
+    <path d="M66 287h72m91 0h111m52 0h84" stroke="#454850" stroke-width="2" stroke-linecap="round"/>
+    <text x="35" y="362" fill="#ededf0" font-size="28" font-weight="500" letter-spacing="1">先有拍法，再有分镜。</text>
+    <text x="36" y="390" fill="#a6a8b2" font-size="12" letter-spacing="2">剧本策划 / 分镜设计 / 制作交付</text>
+    <path d="M530 365h33m-8-8 8 8-8 8" stroke="#9598a2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

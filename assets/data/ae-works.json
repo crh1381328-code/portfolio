@@ -1,0 +1,218 @@
+[
+  {
+    "id": "minecraft-01",
+    "title": "木镐合成演示",
+    "category": "物品与场景",
+    "duration": 6.7,
+    "video": "assets/videos/ae/minecraft-01.mp4",
+    "poster": "assets/videos/ae/minecraft-01.jpg",
+    "source": "1.mov"
+  },
+  {
+    "id": "minecraft-02",
+    "title": "钻石镐与物品数量",
+    "category": "物品与场景",
+    "duration": 4.03,
+    "video": "assets/videos/ae/minecraft-02.mp4",
+    "poster": "assets/videos/ae/minecraft-02.jpg",
+    "source": "2.mov"
+  },
+  {
+    "id": "minecraft-03",
+    "title": "方块材质展示",
+    "category": "物品与场景",
+    "duration": 4.03,
+    "video": "assets/videos/ae/minecraft-03.mp4",
+    "poster": "assets/videos/ae/minecraft-03.jpg",
+    "source": "3.mov"
+  },
+  {
+    "id": "minecraft-04",
+    "title": "物品栏切换",
+    "category": "人物与界面",
+    "duration": 4.03,
+    "video": "assets/videos/ae/minecraft-04.mp4",
+    "poster": "assets/videos/ae/minecraft-04.jpg",
+    "source": "4.mov"
+  },
+  {
+    "id": "minecraft-05",
+    "title": "PVP 状态开关",
+    "category": "人物与界面",
+    "duration": 4.03,
+    "video": "assets/videos/ae/minecraft-05.mp4",
+    "poster": "assets/videos/ae/minecraft-05.jpg",
+    "source": "5.mov"
+  },
+  {
+    "id": "minecraft-06",
+    "title": "武器图标弹出",
+    "category": "物品与场景",
+    "duration": 5.03,
+    "video": "assets/videos/ae/minecraft-06.mp4",
+    "poster": "assets/videos/ae/minecraft-06.jpg",
+    "source": "6.mov"
+  },
+  {
+    "id": "minecraft-07",
+    "title": "倍率进度条",
+    "category": "人物与界面",
+    "duration": 3.03,
+    "video": "assets/videos/ae/minecraft-07.mp4",
+    "poster": "assets/videos/ae/minecraft-07.jpg",
+    "source": "7.mov"
+  },
+  {
+    "id": "minecraft-08",
+    "title": "神秘物品提示",
+    "category": "物品与场景",
+    "duration": 1.6,
+    "video": "assets/videos/ae/minecraft-08.mp4",
+    "poster": "assets/videos/ae/minecraft-08.jpg",
+    "source": "8.mov"
+  },
+  {
+    "id": "minecraft-09",
+    "title": "地图展开与场景展示",
+    "category": "物品与场景",
+    "duration": 7.03,
+    "video": "assets/videos/ae/minecraft-09.mp4",
+    "poster": "assets/videos/ae/minecraft-09.jpg",
+    "source": "9.mov"
+  },
+  {
+    "id": "minecraft-10",
+    "title": "物品信息提示框",
+    "category": "人物与界面",
+    "duration": 5.03,
+    "video": "assets/videos/ae/minecraft-10.mp4",
+    "poster": "assets/videos/ae/minecraft-10.jpg",
+    "source": "10.mov"
+  },
+  {
+    "id": "minecraft-11",
+    "title": "抽奖转盘",
+    "category": "人物与界面",
+    "duration": 4.03,
+    "video": "assets/videos/ae/minecraft-11.mp4",
+    "poster": "assets/videos/ae/minecraft-11.jpg",
+    "source": "11.mov"
+  },
+  {
+    "id": "minecraft-12",
+    "title": "物品环绕动效",
+    "category": "物品与场景",
+    "duration": 3.1,
+    "video": "assets/videos/ae/minecraft-12.mp4",
+    "poster": "assets/videos/ae/minecraft-12.jpg",
+    "source": "12.mov"
+  },
+  {
+    "id": "minecraft-13",
+    "title": "玩家信息卡片",
+    "category": "人物与界面",
+    "duration": 5.03,
+    "video": "assets/videos/ae/minecraft-13.mp4",
+    "poster": "assets/videos/ae/minecraft-13.jpg",
+    "source": "13.mov"
+  },
+  {
+    "id": "minecraft-14",
+    "title": "方块列表展示 01",
+    "category": "物品与场景",
+    "duration": 5.0,
+    "video": "assets/videos/ae/minecraft-14.mp4",
+    "poster": "assets/videos/ae/minecraft-14.jpg",
+    "source": "14.mov"
+  },
+  {
+    "id": "minecraft-15",
+    "title": "方块列表展示 02",
+    "category": "物品与场景",
+    "duration": 5.0,
+    "video": "assets/videos/ae/minecraft-15.mp4",
+    "poster": "assets/videos/ae/minecraft-15.jpg",
+    "source": "15.mov"
+  },
+  {
+    "id": "minecraft-16",
+    "title": "道具图标展示",
+    "category": "物品与场景",
+    "duration": 5.0,
+    "video": "assets/videos/ae/minecraft-16.mp4",
+    "poster": "assets/videos/ae/minecraft-16.jpg",
+    "source": "16.mov"
+  },
+  {
+    "id": "minecraft-17",
+    "title": "状态图标展示 01",
+    "category": "人物与界面",
+    "duration": 5.0,
+    "video": "assets/videos/ae/minecraft-17.mp4",
+    "poster": "assets/videos/ae/minecraft-17.jpg",
+    "source": "17.mov"
+  },
+  {
+    "id": "minecraft-18",
+    "title": "状态图标展示 02",
+    "category": "人物与界面",
+    "duration": 5.0,
+    "video": "assets/videos/ae/minecraft-18.mp4",
+    "poster": "assets/videos/ae/minecraft-18.jpg",
+    "source": "18.mov"
+  },
+  {
+    "id": "minecraft-19",
+    "title": "队伍成员面板",
+    "category": "人物与界面",
+    "duration": 5.0,
+    "video": "assets/videos/ae/minecraft-19.mp4",
+    "poster": "assets/videos/ae/minecraft-19.jpg",
+    "source": "19.mov"
+  },
+  {
+    "id": "minecraft-20",
+    "title": "阵营徽章动效",
+    "category": "人物与界面",
+    "duration": 2.7,
+    "video": "assets/videos/ae/minecraft-20.mp4",
+    "poster": "assets/videos/ae/minecraft-20.jpg",
+    "source": "20.mov"
+  },
+  {
+    "id": "minecraft-21",
+    "title": "使用方法吊牌",
+    "category": "文字与信息",
+    "duration": 5.0,
+    "video": "assets/videos/ae/minecraft-21.mp4",
+    "poster": "assets/videos/ae/minecraft-21.jpg",
+    "source": "21.mov"
+  },
+  {
+    "id": "minecraft-22",
+    "title": "装备栏展示",
+    "category": "人物与界面",
+    "duration": 5.07,
+    "video": "assets/videos/ae/minecraft-22.mp4",
+    "poster": "assets/videos/ae/minecraft-22.jpg",
+    "source": "22.mov"
+  },
+  {
+    "id": "minecraft-23",
+    "title": "钻石镐合成演示",
+    "category": "物品与场景",
+    "duration": 6.1,
+    "video": "assets/videos/ae/minecraft-23.mp4",
+    "poster": "assets/videos/ae/minecraft-23.jpg",
+    "source": "23.mov"
+  },
+  {
+    "id": "minecraft-24",
+    "title": "附魔装备弹出",
+    "category": "物品与场景",
+    "duration": 2.38,
+    "video": "assets/videos/ae/minecraft-24.mp4",
+    "poster": "assets/videos/ae/minecraft-24.jpg",
+    "source": "24.mov"
+  }
+]
