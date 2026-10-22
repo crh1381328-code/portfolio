@@ -816,6 +816,8 @@ a.tl-card:hover .tl-title > span { text-decoration: underline; text-decoration-t
 .aw-card { display: grid; gap: 8px; width: 100%; padding: 0; border: 0; background: none; color: inherit; text-align: left; text-decoration: none; cursor: pointer; font: inherit; }
 .aw-ph { position: relative; display: block; aspect-ratio: 16 / 9; overflow: hidden; background: var(--paper-3); border: 1.5px solid var(--rule-2); border-radius: var(--r-paper); transition: border-color 220ms var(--ease-out), box-shadow 220ms var(--ease-out), transform 260ms var(--ease-out); }
 .aw-ph img, .aw-ph video { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 620ms var(--ease-out); }
+.js .aw-ph img { opacity: 0; transition: opacity 340ms var(--ease-out), transform 620ms var(--ease-out); }
+.js .aw-ph img.is-loaded { opacity: 1; }
 .aw-ph .aw-poster { position: absolute; inset: 0; z-index: 0; }
 .aw-ph video { position: absolute; inset: 0; z-index: 1; background: transparent; opacity: 0; transition: opacity 380ms var(--ease-out), transform 620ms var(--ease-out); }
 .aw-ph video.is-ready { opacity: 1; }
@@ -1133,7 +1135,8 @@ body.aw-lock { overflow: hidden; }
   .js .rv, .js .hero-in > * { opacity: 1 !important; transform: none !important; }
 }
 </style>
-<link rel="preload" as="image" href="assets/media/a651678d5b82.webp" fetchpriority="high">
+<script>window.__ASSET_THUMB={"assets/media/7129084c95a9.webp":"assets/thumbs/7129084c95a9.webp","assets/media/0899f2d11757.webp":"assets/thumbs/0899f2d11757.webp","assets/media/e14b5f9c0c70.webp":"assets/thumbs/e14b5f9c0c70.webp","assets/media/e27f77f92e3d.webp":"assets/thumbs/e27f77f92e3d.webp","assets/media/a651678d5b82.webp":"assets/thumbs/a651678d5b82.webp","assets/media/9c6eb4fb3d8d.webp":"assets/thumbs/9c6eb4fb3d8d.webp","assets/media/2c6f538725ff.webp":"assets/thumbs/2c6f538725ff.webp","assets/media/8a2f5abb9e2d.webp":"assets/thumbs/8a2f5abb9e2d.webp","assets/media/bd833306256b.webp":"assets/thumbs/bd833306256b.webp","assets/media/1f8bfc08ca8e.webp":"assets/thumbs/1f8bfc08ca8e.webp","assets/media/48ba859f5177.webp":"assets/thumbs/48ba859f5177.webp","assets/media/ce951ee6ea9e.webp":"assets/thumbs/ce951ee6ea9e.webp","assets/media/faa846a85592.webp":"assets/thumbs/faa846a85592.webp","assets/media/f4204d558b37.webp":"assets/thumbs/f4204d558b37.webp","assets/media/ddf59360cf02.webp":"assets/thumbs/ddf59360cf02.webp","assets/media/2640b2c010d6.webp":"assets/thumbs/2640b2c010d6.webp","assets/media/536d58eba598.webp":"assets/thumbs/536d58eba598.webp","assets/media/e820aeae646f.webp":"assets/thumbs/e820aeae646f.webp","assets/media/fe6995647b41.webp":"assets/thumbs/fe6995647b41.webp","assets/media/f3084866730d.webp":"assets/thumbs/f3084866730d.webp","assets/media/3a5532caa94d.webp":"assets/thumbs/3a5532caa94d.webp","assets/media/61355f97085e.webp":"assets/thumbs/61355f97085e.webp","assets/media/c69bfbe2b536.webp":"assets/thumbs/c69bfbe2b536.webp","assets/media/d2044e771e7c.webp":"assets/thumbs/d2044e771e7c.webp","assets/media/d803b6223191.webp":"assets/thumbs/d803b6223191.webp","assets/media/55a745a7b4f8.webp":"assets/thumbs/55a745a7b4f8.webp","assets/media/86f8750e5031.webp":"assets/thumbs/86f8750e5031.webp","assets/media/180e9663c57d.webp":"assets/thumbs/180e9663c57d.webp","assets/media/28fc058b027a.webp":"assets/thumbs/28fc058b027a.webp","assets/media/ceb7416bd42f.webp":"assets/thumbs/ceb7416bd42f.webp","assets/media/53a6dd4f3b85.webp":"assets/thumbs/53a6dd4f3b85.webp","assets/media/f4dc61b7dfe2.webp":"assets/thumbs/f4dc61b7dfe2.webp","assets/media/71c0b1f86dde.webp":"assets/thumbs/71c0b1f86dde.webp","assets/media/8934f46733f7.webp":"assets/thumbs/8934f46733f7.webp","assets/media/93dceae176c5.webp":"assets/thumbs/93dceae176c5.webp","assets/media/50ffbd546324.webp":"assets/thumbs/50ffbd546324.webp","assets/media/ffc3ffd2bf7a.webp":"assets/thumbs/ffc3ffd2bf7a.webp","assets/media/b6b16659884a.webp":"assets/thumbs/b6b16659884a.webp","assets/media/1e7ee07381fa.webp":"assets/thumbs/1e7ee07381fa.webp","assets/media/4e415834150f.webp":"assets/thumbs/4e415834150f.webp","assets/media/67b4a5b05a71.webp":"assets/thumbs/67b4a5b05a71.webp","assets/media/153da995284f.webp":"assets/thumbs/153da995284f.webp","assets/media/fe68023d88de.webp":"assets/thumbs/fe68023d88de.webp","assets/media/e0369e9bc1e8.webp":"assets/thumbs/e0369e9bc1e8.webp","assets/media/f49df852f7dc.webp":"assets/thumbs/f49df852f7dc.webp","assets/media/5c2c1633537f.webp":"assets/thumbs/5c2c1633537f.webp","assets/media/70d585ea0650.webp":"assets/thumbs/70d585ea0650.webp","assets/media/842e3b42ddc1.webp":"assets/thumbs/842e3b42ddc1.webp","assets/media/93408fc64712.webp":"assets/thumbs/93408fc64712.webp","assets/media/e397c1c7460e.webp":"assets/thumbs/e397c1c7460e.webp","assets/media/b775cbba5039.webp":"assets/thumbs/b775cbba5039.webp","assets/media/7b6ccff7836b.webp":"assets/thumbs/7b6ccff7836b.webp","assets/media/978f65d6408a.webp":"assets/thumbs/978f65d6408a.webp","assets/media/22b2b5ddcd72.webp":"assets/thumbs/22b2b5ddcd72.webp","assets/media/7b702ab1b9e6.webp":"assets/thumbs/7b702ab1b9e6.webp","assets/media/62cfbe257a1e.webp":"assets/thumbs/62cfbe257a1e.webp","assets/media/ca466acfcd8d.webp":"assets/thumbs/ca466acfcd8d.webp","assets/media/90aa93b0150e.webp":"assets/thumbs/90aa93b0150e.webp","assets/media/f07a1282d4ff.webp":"assets/thumbs/f07a1282d4ff.webp"};window.__ASSET_LQIP={"assets/media/0899f2d11757.webp":"data:image/webp;base64,UklGRjIAAABXRUJQVlA4ICYAAADQAgCdASoYABgAPvV0slMqpqSiqAgBUB6JaQAAPaOgAP7wjgAAAA==","assets/media/7129084c95a9.webp":"data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAADwAwCdASoYAA4APvVmrE4qpaQiMAgBUB6JaACdACFy45EbUtGmopsAAP3eF2Fa95r8Yzf/Cre6fMChFMIG5HgpMSx9hCDQYPMj+xJDT5hoWpqAAAA=","assets/media/a651678d5b82.webp":"data:image/webp;base64,UklGRpwAAABXRUJQVlA4IJAAAAAwBgCdASoYACEAPuVmoU4pJiMiNVgMASAciUAXwHrAOSEiw8y/kHrZUa4w5Jf3kKY1OjjCOdlH8KEAAP4YiJu3c26bbjSQU3ZrDcEzRfwp0RMMic63ZbMK1sQTW8IBYSgXvHwMJU4J13c67yOcegOJh1RuwP9oWC4fNm2Rq22fa/fjkyl2cUYeSQDv/yd3AAA=","assets/media/e14b5f9c0c70.webp":"data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAAAwAwCdASoYAA8APvVkq04qpaQiMAgBUB6JaQAAetD2rndgAP7vMgejg4sGgpSwgTncvAAA","assets/media/e27f77f92e3d.webp":"data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAACwAwCdASoYAA4APvVmqk4qpaQiMAgBUB6JZgCdIFzAvGnfNwW/wADOFnfGvmzCKiQJoED5FTlG4/3dIdiaawcqtwlbuNNRLx9NVT6NolacbOYOTIfsrxp6rruOoAAA","assets/media/9c6eb4fb3d8d.webp":"data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAADwAwCdASoYAA4APvVmq04qpaQiMAgBUB6JaACdACFy45EbhRYdmCIgAP3eF2Fa95r8Yzf/Cre6fMChFMIG5HgofwXhub4wRfs/vgXvOM9gAA==","assets/media/2c6f538725ff.webp":"data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAAAwBACdASoYAA4APvVmq04qpaQiMAgBUB6JbAC2yCPn1fQpEyzsuJNdHjgA/exUzCopS2ix8OG8h9orkw/yDHxlQ9HPLx5kxDTY7Pujo+ZzhP2iATx1ULrIE2ZnZBEAAAA=","assets/media/bd833306256b.webp":"data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAADwAgCdASoYAA0APvVmq04qpaQiMAgBUB6JaQAAetCIAAD+7lKZ8lskg5+3LwAA","assets/media/48ba859f5177.webp":"data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAACQBACdASoYAA4APvVqrk8qpiSiMAgBUB6JagCdMoR8noAC6Ut9GIPD1GreuIAA/l/SndGmynASi/I9SE7aIOBUET4KihDNjaiHfcPUABHtMlG8y8xdw/YeGsbyS70kYevbigg1G/vi2MGaOAA=","assets/media/8a2f5abb9e2d.webp":"data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAADwAwCdASoYAA4APvVorE6qpiQiMAgBUB6JagAAW+y+Rc5vpPdJHokAAP7vw1wZyFXiPMAPP376K/9GJ93yoh0caL3cAA==","assets/media/1f8bfc08ca8e.webp":"data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAADQAwCdASoYAA4APvVsrk4qpqSiMAgBUB6JQBibA9JfEEKH9nIA7AAA/u3NwvltWjYB3BtrXkOoFezQIO3NsRiXI9gs1+4PfVxmiEn0lapoAMoAAAA=","assets/media/ce951ee6ea9e.webp":"data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAACQAwCdASoYAA4ALrl6vV6jqqqqioC4SxAF2AHpFoC2kfuVncwAAP72RhXiVuXGgXmwj7MpeLkBThQGSi1l8qWngu49O88pa4FCskd+O/TgcsAA","assets/media/faa846a85592.webp":"data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAADQAwCdASoYAA4APvV0rlAqp6QisAgBUB6JZwAAUvsqan4axocQFvgA/u1h03z4czR4aTvVtzn566mbupntv6y97/txLnx3FOtX8aSRxrcLxDgA","assets/media/f4204d558b37.webp":"data:image/webp;base64,UklGRjgAAABXRUJQVlA4ICwAAACwAgCdASoYAA4APvVmqk4qpaOjMAgBUB6JaQAAeyAA/u3kFwBDw5W4U4QAAA==","assets/media/ddf59360cf02.webp":"data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAABwAwCdASoYAA0APvVqrk8qpiSiMAgBUB6JZwAAQvcvHONQ/QAA/u6hTwI2MoNDUGRAPW8V+vzWQP7eksTt8jce5nw2WV2+aTQfFAAA","assets/media/2640b2c010d6.webp":"data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAADQAwCdASoYAA4APvVEuFcqoqakGAFQHolnAABbkt7UBBX3Ndx5ciAA/u6IDCLMov36Gbpcg1gQ2vRSjSiRQIyp3uV7rAAA","assets/media/536d58eba598.webp":"data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAACwAwCdASoYAA4APvVmrk4qpaSiMAgBUB6JYwCdAA8UPdKOY7L2AAD+1u5mZ/ShiJ8v/XvZImY6p75uPeoJwpYNjJXjyi6yTghm8ZwaiD3Dj40gxq8BucX+kdkDK7xCfieTAAAA","assets/media/e820aeae646f.webp":"data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAABQAwCdASoYAA4APvVkqk4qpaOiMAgBUB6JaACw7Bqurw3uUADuWVXHNNKiktsSZgIK86DMyIU2w+Vmy23quBNZXE2RlACnuZWKabun4/lYWCKZJiC4A9ABS7gwRRkOvBe1pK5xwAA=","assets/media/f3084866730d.webp":"data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAACwAwCdASoYAA4APvVmq06qpaQiMAgBUB6JQBdgBAvLJ74frtkdwAD+Z0CiYCjzJ8xGIuGIyWHu8wtSFfBajMJwIgCuDnxJxagWVyov3ur8Cqd+utaOGrTkHpAx06XmPAAAAA==","assets/media/fe6995647b41.webp":"data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAABwBACdASoYAA4APvVmq06qpaQiMAgBUB6JagCdMoMljEJULpA+qATiQC87gAD+rAWlfjHQRsad6iK7HWS0oaadG2v1QOxfXcR8MoGuJpVqoYTEn9+tBWGNMjZuby69y0AAAA==","assets/media/3a5532caa94d.webp":"data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAAAwBACdASoYAA4APvVork8qpiSiMAgBUB6JbAC2yCPn1fQpEyzrLAhJscAA/exUzCopS2ix8OG8h9orkw/yDHxlQ9HNlSsnPOOPSOJAg8h8sBJaSNj5qNLnMzsMQAAA","assets/media/61355f97085e.webp":"data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAACwAwCdASoYAA4APvVkq04qpaQiMAgBUB6JZgCdIMgAvh3zKdGyAADOFnfGvmzCKiQJoED5FTlG4/5Ud+QIj4wSGslIZrR0G1xc1D9dakMy6vd+Ac2dmaavFcBhvq+AAAA=","assets/media/c69bfbe2b536.webp":"data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAACwBACdASoYAA4APvVqrk8qpiSiMAgBUB6JagCdMoR8noADRvr9nCJf3DluOolAAP5f0p3f7HRmrfw4pPisV24KKOpANT4z0amuDlEhhO+fpiaJjScA7vl3zJWYj2Y6+M+40+LeSh4+4Y5zAAA=","assets/media/d2044e771e7c.webp":"data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAAAQAwCdASoYAA4AA4BcJbACdMoRwAEj2yV8K4N1P8sqygAA/uCbbkZ/tk6s9BqAN7kTwc61gkIIYMTVg2dHh5NUt5YXlXOiKTN2aWpL01h0atz0QdOfFyjQAAA=","assets/media/d803b6223191.webp":"data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAADwAwCdASoYAA4APvVork8qpiSiMAgBUB6JaACdACFy45EbUldPC1gAAP3eF2Fa95r8Yzf/Cre6fMChFMIG5Hgofwajq1F+3t3xlnSO1ir73nGewAA=","assets/media/55a745a7b4f8.webp":"data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAADQAwCdASoYAA4APvVmq04qpaQiMAgBUB6JZgCsAB4RTfz9pewrNgAA9feYSstloqARb2BMqUOdPx1rYeSNatg+WSSvfZS2DbysQb2PJ/oYJ75t40xRz5hI8UsOS/XkX/SVIagAAAA=","assets/media/180e9663c57d.webp":"data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAABQBACdASoYAA4APvVmrE6qpaQiMAgBUB6JZACw7CFsiklnL+nzXUcZxAKAAP7oR9jaXiVHUcSEswqkbingRwfq79uyBUKZrW+2lmhz6DiQ/c2/ii3gOEOhDTPitaQ+AAA=","assets/media/86f8750e5031.webp":"data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAADwAwCdASoYAA4APvV0rlAqp6QisAgBUB6JZwAAWpLe08QN0ZdDtr54AP7uiAwizKL9+hm6XIOBwj8WgojaqOfGcYT75iubrAA=","assets/media/28fc058b027a.webp":"data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAAAQBACdASoYAA4APvVkq04qpaQiMAgBUB6JbACdMoAC26enT6Vwbv56AADx3XUtmiQ7TTpGOjSZCPzFYyXsVE5GM9L+zORN+m/3AMuS3QubkkDnCfkgkx5J0Yy4vIMZYCS4AA==","assets/media/ceb7416bd42f.webp":"data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAAAQBACdASoYAA0APvVork8qpiSiMAgBUB6JaACdMoACsWiZamtygRCKYAD6Luf0kQjtxXZ2fNn1hh+RaPjZZB+moAa5i+Xv3I85YOP4XUhoM7dJsAA=","assets/media/53a6dd4f3b85.webp":"data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAADQAwCdASoYAA4APvVmq04qpaQiMAgBUB6JbACdACEItFe5IN4Q0QAA/hDr26w4CfN/1in9giper5fvpHgzH/l/lCVy7ujzNqv8enA9/E/JGVqBrytRjm3jpeFNl700FQAAAA==","assets/media/f4dc61b7dfe2.webp":"data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAAAwBACdASoYAA4APvVkqk4qpaOiMAgBUB6JaACdIDZB1owfwtxdKw66NKgA/l3iz9Ju54susCX9wjAtaq33VtoI3Sc6O/W83Hj3+f1iO9p/juZn/tsuim3iwDWCwoqcwGdIHnEXP7fbz2bGT/RuXFkAAAA=","assets/media/71c0b1f86dde.webp":"data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAADwAwCdASoYAA4APvVmqk4qpaOiMAgBUB6JaACdACG+4wmBwykvzIwAAMsOR0v+UafbVcQTbHGh+FodLV5OOUutGCYBHZV8DRlKcBs/fTa6Dc8PyO+Fzt4fruYqucA9wD/zNJUAAAA=","assets/media/8934f46733f7.webp":"data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAAAQBACdASoYAA4APvVEuFcqoqakGAFQHolsAJ0AG6fzmfoo7002fT1hAAD+gTYDQN1xzRiqEsJCC4XPL4cU5JR6Vd/spgcFgLJHku8+/i8ofsU0GZz5lFFtGcBVkj+/MadYAA==","assets/media/93dceae176c5.webp":"data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAADQAwCdASoYAA4APvVqrk8qpiSiMAgBUB6JbAC7MoMYACDaBh7UgUAA3IeSBe0sCkJd/Fdc6FPbknuIBOnc/8bge2MZUo0B9FapdXRwTeplsibY8DX6L58tRo0YpFSAAAA=","assets/media/50ffbd546324.webp":"data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAACQAwCdASoYAA4APvVmqk4qpaOiMAgBUB6JQBOgBAvLQ7JuTcLQAP5nQKJgGt4XENqf14NY4GfWwB9+eg18iFlOAUCGEEAF8e8rWFt3MzhvxKYtskeY8jJquk1j4D+G2AAAAA==","assets/media/ffc3ffd2bf7a.webp":"data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAADQAwCdASoYAA4APvVmq04qpaQiMAgBUB6JZQAASq+rLV198MTAslQAzEHD/cFnQnHY16rQL7Y9J+TRa5TN89lvMO1SaNz58tyfS7YAAAA=","assets/media/b6b16659884a.webp":"data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAAAwBACdASoYAA4APvVkq04qpaQiMAgBUB6JQBYdg3aXBn5yzlB5uKmGymAA/u9LfOHEvhTejBCYNk8S5qY8A07y+x60dWPfPOZ1GZ9cV8+2jmGZ8YLgAA==","assets/media/1e7ee07381fa.webp":"data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAACQAwCdASoYAA4APvVmqk4qpaQiMAgBUB6JaQAAUqlR6edaSWAAAP7D2srDYbkdlUVmJSxganmyAAAA","assets/media/67b4a5b05a71.webp":"data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAACwAwCdASoYAA4APvVmq06qpaQiMAgBUB6JQBOgA9ic1LbxxvPIKAD+5F6+2UCrvDtbF9pNlmCDxD+JVawaJr3RYMvP0KKUV3xke9k5qOZCC3TrO+0KKLkg1+AAAA==","assets/media/4e415834150f.webp":"data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAACQAwCdASoYAA4APvVqrE6qpiQiMAgBUB6JZwAAW9HJNFMp1pO4AP7vxCZ5TsFiHR47BS8K4aeOOj7NfeES/rz9zZxLuK4IMQyDimaC9AAAAA==","assets/media/153da995284f.webp":"data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAAAwAwCdASoYAA4APvVoq06qpiOiMAgBUB6JZwAAW+ss3V7AAP7vtLF9BgQ+3a1GzwAAAA==","assets/media/fe68023d88de.webp":"data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAACQAwCdASoYAA4APvVkqk4qpaOiMAgBUB6JaQAAW9F7gXrbw10AAP7vtuXLNoJcCAv2/F39murzcNkAAAA=","assets/media/e0369e9bc1e8.webp":"data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAABQAwCdASoYAA4ALrl6vV6jqqqqioC4S0gABc60hHqS/AjoAAD+9wKnozn2cdWKiWW3bDQIdQtwAAAA","assets/media/f49df852f7dc.webp":"data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAACQAwCdASoYAA4APvVsrk4qpqSiMAgBUB6JaQAAW+s3kvHSwRgAAP7vskxi/SRVyBzkCe2ewAA=","assets/media/5c2c1633537f.webp":"data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAABQAwCdASoYAA4APvVsrk4qpqSiMAgBUB6JaQAAW+xQDTZrQAD+78Nb+eUe+zRIT3FZkQ+F/2+xGtQAAAA=","assets/media/70d585ea0650.webp":"data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAABQAwCdASoYAA4APvVmq04qpaOiMAgBUB6JaQAAW+qtBX4zAAD+77S222WCe/NKERlAAAAA","assets/media/842e3b42ddc1.webp":"data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAAAwAwCdASoYAA4ALrl6vV6jqqqqioC4S0gABc6ySmYb1XQAAP7nCdrO3GpTrzswfPsy/EoySDiSAAAA","assets/media/93408fc64712.webp":"data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAABwAgCdASoYAA4AA4BcJZQAAudgJbBlqMCJCUAAAP73Ap1RNIh55s+FNi2QdfGO9PUxwAAA","assets/media/b775cbba5039.webp":"data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAABwAwCdASoYAA4ALrl6vV6jqqqqioC4S0gABc8RMMn223ejlAAA/vcOktK635628fgeIxEBgMcCEe118ZCx60AbwAA=","assets/media/e397c1c7460e.webp":"data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAACwAwCdASoYAA4APvVork8qpiSiMAgBUB6JYwAAW+Gi8BsqyY6QAAD+77jEg7/XCrvqTjfxR+Rnl56TJarzuVdorMVG+McsH4pdHElNMIAAAA==","assets/media/7b6ccff7836b.webp":"data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAACwAwCdASoYAA4APvVoq04qpiQiMAgBUB6JZQC7ACHWrMbhCU+qAAD+77u1Fhvgd1SWHF+2gViQGWhHb+/4r1b3qSu4pJGxO6KJEU9TVh7LsAAA","assets/media/978f65d6408a.webp":"data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAADwAwCdASoYAA4APvVorE6qpiQiMAgBUB6JZQAAW0oAQ9xgf8xWUcpAAP6U9uYaTZqtZ2DqwCIJT3P8KI6atXoV+WnnMlGcVZlrialrwNlu6fmJL6EzLYnzeHHNAAAA","assets/media/22b2b5ddcd72.webp":"data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAACwAwCdASoYAA4APvVsrk4qpqSiMAgBUB6JYgC7ACHWsaEZb0f/AAD+7Uj3TvclV77CtzFtdwH+t0jm0dYJD4WCGpr3+50LSHlOFOLN2Up9QkSEv68AAA==","assets/media/7b702ab1b9e6.webp":"data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAAAwAwCdASoYAA4APvVmrk4qpaSiMAgBUB6JZwAASnFjtwAAAP7v15MwHv3gI/7WnCmgqmjCgAA=","assets/media/62cfbe257a1e.webp":"data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAABwAwCdASoYAA4APvVEuFcqoqakGAFQHolnAABc6kfC6cYUeoAA/u/Cl2vLcMGzHKhaHWyzUnwAAA==","assets/media/ca466acfcd8d.webp":"data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAACwAwCdASoYAA4APvVmq04qpaQiMAgBUB6JZwAAUq6wWlumQBUjAAD+7d/8bRvTPnvAcSzwHupKMTKgCEOog68dG/DuC6rszxJYVv8VIVRlqVnIwnqkFvYACAA=","assets/media/90aa93b0150e.webp":"data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAACQAwCdASoYAA4APvVEuFcqoqakGAFQHolnAABc7EgZIeiInAwAAP7vw2UuBaN53HWZO50Tny9q/HgngQAAAA==","assets/media/f07a1282d4ff.webp":"data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAACwAwCdASoYAA4APvVmrk4qpaSiMAgBUB6JaQAAUqjmmoT2m1OwAAD+79eNn89INFnGZb+CD3J1eYEzo6+OwAAA"};</script>
+<link rel="preload" as="image" href="assets/thumbs/a651678d5b82.webp" fetchpriority="high">
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/fangfang-xianfeng.woff2" crossorigin>
 </head>
 <body>
@@ -1257,7 +1260,7 @@ body.aw-lock { overflow: hidden; }
     <figure class="portrait rv">
       <svg class="pclip" viewBox="0 0 34 104" aria-hidden="true"><path d="M11 30v52a6 6 0 0 0 12 0V17a10.5 10.5 0 0 0-21 0v70a15 15 0 0 0 30 0V34" fill="none" stroke="url(#steel)" stroke-width="3.2" stroke-linecap="round"/></svg>
       <span class="tape yellow" aria-hidden="true"></span>
-      <img src="assets/media/a651678d5b82.webp" width="960" height="1304" alt="崔瑞昊的个人照片：黑色短发，米色外套，室内背景" fetchpriority="high" decoding="async">
+      <img src="assets/thumbs/a651678d5b82.webp" srcset="assets/thumbs/a651678d5b82.webp 900w, assets/media/a651678d5b82.webp 1600w" sizes="(max-width: 999px) 86vw, 430px" width="960" height="1304" alt="崔瑞昊的个人照片：黑色短发，米色外套，室内背景" fetchpriority="high" decoding="async">
     </figure>
 
     <div class="id-main hero-in">
@@ -1943,6 +1946,21 @@ body.aw-lock { overflow: hidden; }
    tools, services and FAQs; the render functions in app.js do the rest.
    ===================================================================== */
 
+/* Deploy build fills these maps with 720w thumbnails and 24px LQIPs.
+   In the single-file preview both stay empty and original images are used. */
+const __thumb = window.__ASSET_THUMB || {};
+const __lqip = window.__ASSET_LQIP || {};
+const thumbSrc = (p) => __thumb[p] || p;
+const thumbSet = (p) => (__thumb[p] ? `${__thumb[p]} 800w, ${p} 1600w` : '');
+const phBg = (p) => (__lqip[p] ? `background-image:url(${__lqip[p]});background-size:cover;background-position:center` : '');
+function markImg(img) { if (img.complete && img.naturalWidth) img.classList.add('is-loaded'); }
+function markImgs(root = document) { root.querySelectorAll('img').forEach(markImg); }
+document.addEventListener('load', (e) => {
+  const t = e.target;
+  if (t && t.tagName === 'IMG') t.classList.add('is-loaded');
+}, true);
+window.addEventListener('load', () => markImgs());
+
 const ROLES = [
   {
     slug: 'jiulinlan', employer: '九林澜影视传媒（杭州）', title: '编导 / 摄影 / 后期',
@@ -2296,14 +2314,16 @@ const FAQ = [
   /* ---------- Small components ---------- */
 
   function media(c, opts = {}) {
-    const load = opts.eager ? 'fetchpriority="high"' : 'loading="lazy"';
-    return `<img src="${c.img}" width="1600" height="900" alt="${esc(c.alt)}" style="object-position:${c.pos || '50% 50%'}" ${load} decoding="async">`;
+    const load = opts.eager ? 'fetchpriority="high" loading="lazy"' : 'loading="lazy"';
+    const src = opts.eager ? c.img : thumbSrc(c.img);
+    const set = opts.eager ? '' : thumbSet(c.img);
+    return `<img src="${src}"${set ? ` srcset="${set}" sizes="(max-width: 640px) 92vw, (max-width: 1100px) 45vw, 360px"` : ''} width="1600" height="900" alt="${esc(c.alt)}" style="object-position:${c.pos || '50% 50%'}" ${load} decoding="async">`;
   }
 
   function workCard(c, i = 0) {
     return `<li style="--i:${i}"><a class="wcard" href="#/portfolio/${c.slug}">
       <span class="tape yellow" aria-hidden="true"></span>
-      <div class="ph">${media(c)}</div>
+      <div class="ph"${phBg(c.img) ? ` style="${phBg(c.img)}"` : ''}>${media(c)}</div>
       <div class="wcard-body">
         <div class="wcard-top"><span class="mono">${esc(c.kind)}</span><span class="mono">${c.year}</span></div>
         <h3>${esc(c.title)}</h3>
@@ -2336,7 +2356,7 @@ const FAQ = [
   }
 
   function roleRow(r) {
-    const prints = r.cases.map((s) => caseBy(s)).map((c) => `<a href="#/portfolio/${c.slug}"><div class="ph"><img src="${c.img}" width="1600" height="900" alt="" style="object-position:${c.pos || '50% 50%'}" loading="lazy" decoding="async"></div><span>${esc(c.title)}</span></a>`).join('');
+    const prints = r.cases.map((s) => caseBy(s)).map((c) => `<a href="#/portfolio/${c.slug}"><div class="ph"${phBg(c.img) ? ` style="${phBg(c.img)}"` : ''}><img src="${thumbSrc(c.img)}"${thumbSet(c.img) ? ` srcset="${thumbSet(c.img)}" sizes="220px"` : ''} width="1600" height="900" alt="" style="object-position:${c.pos || '50% 50%'}" loading="lazy" decoding="async"></div><span>${esc(c.title)}</span></a>`).join('');
     return `<li class="role-row rv">
       <div class="role-when"><b>${r.dates.split(' - ')[0]}</b><span class="mono">${r.now ? '至今' : '至 ' + r.dates.split(' - ')[1]}</span><span class="mono">${r.length}</span></div>
       <div>
@@ -2401,7 +2421,7 @@ const FAQ = [
   function caseVideo(c) {
     if (!c.video) return '';
     return `<figure class="case-video rv">
-      <video controls preload="none" playsinline poster="${c.videoPoster}" width="960" height="540">
+      <video controls preload="none" playsinline data-poster="${c.videoPoster}" width="960" height="540">
         <source src="${c.video}" type="video/mp4">
         你的浏览器不支持视频播放。<a href="${c.video}" download="${esc(c.slug)}.mp4">下载这段视频</a>
       </video>
@@ -2601,6 +2621,9 @@ const FAQ = [
       if (first) pages.forEach((p) => { p.hidden = p !== target; });
       else if (current) current.hidden = true;
       target.hidden = false;
+      target.querySelectorAll('video[data-poster]').forEach((v) => {
+        if (!v.getAttribute('poster')) v.setAttribute('poster', v.dataset.poster);
+      });
       current = target;
       const onPortfolio = target.dataset.page === 'portfolio';
       awGrid.querySelectorAll('video').forEach((v) => {
@@ -2777,11 +2800,13 @@ const FAQ = [
   function awCard(w, i) {
     const live = w.group === 'motion' && !!w.video;
     const aeKey = w.aeKey || (w.id.indexOf('aw-ae-') === 0 ? w.id.slice(6) : '');
+    const th = thumbSrc(w.poster), set = thumbSet(w.poster), bg = phBg(w.poster);
+    const attrs = `src="${th}"${set ? ` srcset="${set}" sizes="(max-width: 999px) 46vw, (max-width: 1200px) 31vw, 300px"` : ''} alt="${esc(w.alt)}" loading="lazy" decoding="async" width="640" height="360"${i < 4 ? ' fetchpriority="high"' : ''}`;
     const shot = live
-      ? `<img class="aw-poster" src="${w.poster}" alt="${esc(w.alt)}" loading="lazy" decoding="async" width="640" height="360">
+      ? `<img class="aw-poster" ${attrs}>
         <video data-ae="${esc(aeKey)}" muted loop playsinline preload="none" disablepictureinpicture aria-label="${esc(w.title)}，自动循环播放"></video>`
-      : `<img src="${w.poster}" alt="${esc(w.alt)}" loading="lazy" decoding="async" width="640" height="360">`;
-    const body = `<span class="aw-ph${live ? ' is-live' : ''}">
+      : `<img ${attrs}>`;
+    const body = `<span class="aw-ph${live ? ' is-live' : ''}"${bg ? ` style="${bg}"` : ''}>
         ${shot}
         <span class="aw-kind mono">${esc(w.kind)}</span>
         ${w.link ? `<span class="aw-ext mono">B 站 ${ico('arrow-up-right')}</span>` : w.case ? `<span class="aw-play" aria-hidden="true">${ico('arrow-right')}</span>` : `<span class="aw-play" aria-hidden="true">${ico('play')}</span>`}
@@ -3071,5 +3096,6 @@ const FAQ = [
   window.addEventListener('load', () => setTimeout(() => current && revealIn(current), 300));
 })();
 </script>
+<script>if ('serviceWorker' in navigator) addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(() => {}));</script>
 </body>
 </html>
